@@ -1,6 +1,7 @@
-FROM node:20
+FROM mhart/alpine-node
 WORKDIR /app
-COPY . . 
+COPY package* .
 RUN npm install
+COPY . .
 EXPOSE 3000
 CMD ["node","index.js"]
